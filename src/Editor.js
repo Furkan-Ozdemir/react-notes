@@ -15,7 +15,6 @@ const Editor = () => {
     <ReactQuill
       theme="snow"
       style={{
-        fontFamily: "Roboto sans-serif !important",
         backgroundColor: "#fff",
       }}
       value={value}
