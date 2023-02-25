@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import Editor from "./Editor";
 import NotePadHeader from "./NotePadHeader";
-import Tiptap from "./TipTap";
 
 const NotePad = () => {
   return (
     <Notepad>
       <NotePadHeader />
-      <Tiptap />
+      <Editor />
     </Notepad>
   );
 };
