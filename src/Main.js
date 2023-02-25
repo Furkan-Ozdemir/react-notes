@@ -16,7 +16,6 @@ const Div = styled.div`
   width: 50%;
   max-width: 1000px;
   border: 0.05em solid tomato;
-  background-color: #f2f2f7;
   display: flex;
 `;
 export default Main;

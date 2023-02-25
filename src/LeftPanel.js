@@ -5,20 +5,28 @@ import Card from "./Card";
 const LeftPanel = () => {
   return (
     <Leftpanel>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <Card isSelected={true} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
+      <Card isSelected={false} />
     </Leftpanel>
   );
 };
 const Leftpanel = styled.div`
   border: 0.05em solid blue;
+  overflow-y: scroll;
 `;
 export default LeftPanel;

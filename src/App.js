@@ -7,6 +7,7 @@ function App() {
         display: "flex",
         justifyContent: "center",
         height: "100vh",
+        overflow: "hidden",
       }}
       className="App"
     >
