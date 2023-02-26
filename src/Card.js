@@ -2,15 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const Card = (props) => {
-  const { isSelected } = props;
+  const { isSelected, h3, date, note } = props;
   return (
     <Div isSelected={isSelected}>
-      <h3 style={{ marginBottom: "10px" }}>Title</h3>
+      <h3 style={{ marginBottom: "10px" }}>{h3}</h3>
       <span>
-        <b>Date</b>{" "}
-        <span style={{ color: "#868273" }}>
-          noteaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        </span>
+        <b>{date}</b> <span style={{ color: "#868273" }}>{note}</span>
       </span>
     </Div>
   );

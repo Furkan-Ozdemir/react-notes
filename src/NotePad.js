@@ -3,10 +3,11 @@ import styled from "styled-components";
 import Editor from "./Editor";
 import NotePadHeader from "./NotePadHeader";
 
-const NotePad = () => {
+const NotePad = (props) => {
+  const { setCardTexts, cards } = props;
   return (
     <Notepad>
-      <NotePadHeader />
+      <NotePadHeader cards={cards} setCardTexts={setCardTexts} />
       <Editor />
     </Notepad>
   );

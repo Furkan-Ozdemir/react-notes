@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import styled from "styled-components";
 
 const Editor = () => {
   const [value, setValue] = useState(
@@ -16,6 +15,7 @@ const Editor = () => {
       theme="snow"
       style={{
         backgroundColor: "#fff",
+        height: "100%",
       }}
       value={value}
       onChange={handleChange}
