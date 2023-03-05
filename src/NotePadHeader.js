@@ -18,6 +18,7 @@ const NotePadHeader = (props) => {
       h3: title.trim() === "" ? "Cant think of a title" : title,
       date: dd + "/" + mm + "/" + yyyy,
       note: editorValue,
+      selected: true,
     };
     try {
       const response = await fetch(
@@ -39,10 +40,46 @@ const NotePadHeader = (props) => {
       console.log(error);
     }
   };
+  const findSelectedNote = () => {
+    try {
+      const selectedNote = Object.keys(notes).filter((key) => {
+        return notes[key].selected === true;
+      })[0];
+      return selectedNote;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const deleteNote = async (noteName) => {
+    //TODO sildikten sonra en ustteki notu selected'e cek
+    try {
+      const response = await fetch(
+        `https://react-notes-91c95-default-rtdb.europe-west1.firebasedatabase.app/notes/${noteName}.json`,
+        {
+          method: "DELETE",
+        }
+      );
+      if (response.ok) {
+        console.log("Note deleted successfully");
+      } else {
+        throw new Error("Error occured while deleting note");
+      }
+    } catch (error) {
+      //TODO buraya daha sonra error modali ekle
+      console.log(error);
+    }
+  };
   return (
     <HeaderDiv>
       <span>
-        <img src="/assets/delete.png" alt="trash-can-icon" />
+        <img
+          onClick={() => {
+            const noteName = findSelectedNote();
+            deleteNote(noteName);
+          }}
+          src="/assets/delete.png"
+          alt="trash-can-icon"
+        />
       </span>
       <span>
         <img src="/assets/share.png" alt="share-icon" />
