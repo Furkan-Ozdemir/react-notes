@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const Card = (props) => {
-  const { isSelected, h3, date, note } = props;
+  const { h3, date, note } = props;
+
   return (
-    <Div isSelected={isSelected}>
+    <Div>
       <h3 style={{ marginBottom: "10px" }}>{h3}</h3>
       <span>
         <b>{date}</b> <span style={{ color: "#868273" }}>{note}</span>
@@ -15,7 +16,7 @@ const Card = (props) => {
 const Div = styled.div`
   padding: 20px;
   margin: 10px;
-  background-color: ${(props) => (props.isSelected ? "#F7ECBB" : "#fff")};
+  background-color: #fff;
   border-radius: 15px;
   max-width: 200px;
   max-height: 120px;

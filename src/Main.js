@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import LeftPanel from "./LeftPanel";
 import NotePad from "./NotePad";
 
-const Main = () => {
-  const [cardTexts, setCardTexts] = useState([
-    { h3: "Title", date: "2023/26/02", note: "this is a note" },
-  ]);
+const Main = (props) => {
+  const { notes, setNotes } = props;
+
   return (
     <Div>
-      <LeftPanel cards={cardTexts} />
-      <NotePad cards={cardTexts} setCardTexts={setCardTexts} />
+      <LeftPanel notes={notes} />
+      <NotePad notes={notes} setNotes={setNotes} />
     </Div>
   );
 };

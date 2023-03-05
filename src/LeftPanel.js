@@ -1,18 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import Card from "./Card";
-// import cards from "./CardTexts";
+import uuid from "react-uuid";
 
 const LeftPanel = (props) => {
-  const { cards } = props;
+  const { notes } = props;
+
+  const notesArray = Object.keys(notes).map((key) => notes[key]);
   return (
     <Leftpanel>
-      {cards.map((card) => (
-        <Card h3={card.h3} date={card.date} note={card.note} />
+      {notesArray.map((notes) => (
+        <Card
+          key={uuid()}
+          identifier={uuid()}
+          h3={notes.h3}
+          date={notes.date}
+          note={notes.note}
+        />
       ))}
-      {/* <Card isSelected={true} />
-      <Card isSelected={false} />
-      <Card isSelected={false} /> */}
     </Leftpanel>
   );
 };

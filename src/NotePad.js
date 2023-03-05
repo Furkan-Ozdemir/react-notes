@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Editor from "./Editor";
 import NotePadHeader from "./NotePadHeader";
 
 const NotePad = (props) => {
-  const { setCardTexts, cards } = props;
+  const { notes, setNotes } = props;
+  const [editorValue, setEditorValue] = useState("");
+  const sendNoteToHeader = (note) => {
+    setEditorValue(note);
+  };
+
   return (
     <Notepad>
-      <NotePadHeader cards={cards} setCardTexts={setCardTexts} />
-      <Editor />
+      <NotePadHeader
+        notes={notes}
+        editorValue={editorValue}
+        setNotes={setNotes}
+      />
+      <Editor sendNoteToHeader={sendNoteToHeader} />
     </Notepad>
   );
 };
